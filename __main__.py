@@ -67,4 +67,4 @@ def create_tables():
         print(f"Erro ao criar tabelas: {e}")
 
 if __name__ == '__main__':
-    create_database()  # Cria o banco de dados, se ne
+    create_database()
