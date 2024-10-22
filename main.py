@@ -1,3 +1,3 @@
-from models.criarDB import create_database
+from controllers.criarDB import create_database
 
 create_database()
