@@ -1,20 +1,17 @@
+from config import get_connection_string
+import config
 import mysql.connector
 from mysql.connector import errorcode
 
-DATABASE = 'clinicaDatabase'
-USER = 'labdatabase'
-PASSWORD = 'lab@Database2022'
-HOST = 'localhost'
-PORT = '3306'
 
 def create_database():
     try:
-        conn = mysql.connector.connect(user = USER, password = PASSWORD, host = HOST, port = PORT)
+        conn = mysql.connector.connect(**get_connection_string())
         cursor = conn.cursor()
-        cursor.execute(f"SHOW DATABASES LIKE '{DATABASE}'")
+        cursor.execute(f"SHOW DATABASES LIKE '{config.DATABASE}'")
         exists = cursor.fetchone()
         if not exists:
-            cursor.execute(f"CREATE DATABASE {DATABASE}")
+            cursor.execute(f"CREATE DATABASE {config.DATABASE}")
             print("Banco de dados criado com sucesso!")
         else:
             print("Banco de dados já existe.")
@@ -27,18 +24,12 @@ def create_database():
 
 def create_tables():
     try:
-        conn = mysql.connector.connect(
-            database = DATABASE,
-            user = USER,
-            password = PASSWORD,
-            host = HOST,
-            port= PORT
-        )
+        conn = mysql.connector.connect(**get_connection_string())
         conn.autocommit = True 
         cursor = conn.cursor()
         
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Clinica (
+                CREATE TABLE IF NOT EXISTS Clinica (
                 idClinica SERIAL PRIMARY KEY,
                 nome VARCHAR(100) NOT NULL,
                 endereco VARCHAR(200),
@@ -47,7 +38,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Medico (
+                CREATE TABLE IF NOT EXISTS Medico (
                 idMedico SERIAL PRIMARY KEY,
                 nome VARCHAR(100) NOT NULL,
                 especializacao VARCHAR(100),
@@ -57,7 +48,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Paciente (
+                CREATE TABLE IF NOT EXISTS Paciente (
                 idPaciente SERIAL PRIMARY KEY,
                 nome VARCHAR(100) NOT NULL,
                 endereco VARCHAR(200),
@@ -68,7 +59,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Recepcionista (
+                CREATE TABLE IF NOT EXISTS Recepcionista (
                 idRecepcionista SERIAL PRIMARY KEY,
                 nome VARCHAR(100) NOT NULL,
                 telefone VARCHAR(15),
@@ -77,7 +68,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Administrador (
+                CREATE TABLE IF NOT EXISTS Administrador (
                 idAdministrador SERIAL PRIMARY KEY,
                 nome VARCHAR(100) NOT NULL,
                 clinicaId INT REFERENCES Clinica(idClinica)
@@ -85,7 +76,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Consulta (
+                CREATE TABLE IF NOT EXISTS Consulta (
                 idConsulta SERIAL PRIMARY KEY,
                 dataHora TIMESTAMP NOT NULL,
                 status VARCHAR(50),
@@ -105,7 +96,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Prontuario (
+                CREATE TABLE IF NOT EXISTS Prontuario (
                 idProntuario SERIAL PRIMARY KEY,
                 data TIMESTAMP NOT NULL,
                 diagnostico VARCHAR(255),
@@ -115,7 +106,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Faturamento (
+                CREATE TABLE IF NOT EXISTS Faturamento (
                 idFaturamento SERIAL PRIMARY KEY,
                 valor DECIMAL(10, 2),
                 dataFaturamento TIMESTAMP NOT NULL,
@@ -124,7 +115,7 @@ def create_tables():
         """)
 
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Relatorio (
+                CREATE TABLE IF NOT EXISTS Relatorio (
                 idRelatorio SERIAL PRIMARY KEY,
                 dataGeracao TIMESTAMP NOT NULL,
                 detalhes VARCHAR(255),
@@ -138,6 +129,4 @@ def create_tables():
     finally:
         cursor.close()
         conn.close()
-if __name__ == '__main__':
-     create_database()
-     create_tables()
+

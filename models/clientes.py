@@ -1,22 +1,10 @@
+from config import get_connection_string
 import mysql.connector
 from mysql.connector import Error
 
-DATABASE = 'clinicaDatabase'
-USER = 'labdatabase'
-PASSWORD = 'lab@Database2022'
-HOST = 'localhost'
-PORT = '3306'
-
-
 def consultar_clientes():
     try:
-        conn = mysql.connector.connect(
-            database = DATABASE,
-            user = USER,
-            password = PASSWORD,
-            host = HOST,
-            port = PORT 
-        )
+        conn = mysql.connector.connect(**get_connection_string())
         
         if conn.is_connected():
             print("Conexão bem-sucedida!")
