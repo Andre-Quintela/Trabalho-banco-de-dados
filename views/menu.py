@@ -1,7 +1,6 @@
 from controllers import clinica, consulta, medico, paciente
+from controllers.relatorios import gerar_relatorio_consultas_com_juncao, gerar_relatorio_total_consultas_por_clinica
 from views.splashscreen import splashscreen
-
-
 
 def Menu():  
     while True:  
@@ -9,11 +8,10 @@ def Menu():
             resposta = int(input('''
                 ===============================================================
                 ===== Digite um número referente a opção que você deseja: ===== 
-                ===== 1 - Funções para clinicas;                          =====                 
-                ===== 2 - Funções para usuários (Médico ou paciente);     =====
-                ===== 3 - Marcar nova consulta;                           =====
-                ===== 4 - Consultar as consultas marcadas ;               =====
-                ===== 5 - Cancelar agendamento de consulta;               =====
+                ===== 1 - Clinicas;                                       =====                 
+                ===== 2 - Usuários (Médico ou paciente);                  =====
+                ===== 3 - Consulta;                                       =====
+                ===== 4 - Relatórios                                      =====
                 ===== 0 - Sair;                                           =====
                 ===============================================================
                 '''))
@@ -87,25 +85,32 @@ def Menu():
                         paciente.deletarPaciente()
 
             elif resposta == 3:
-                print("Marcando nova consulta...")
-                consulta.cadastrarConsulta()
-            
-            elif resposta == 4:
-                print("Consultando consultas marcadas...")
-                print("1 - Consultar consulta por ID")
-                print("2 - Consultar todas as consultas")                    
+                print("1 - Agendar consulta")
+                print("2 - Atualizar consulta")
+                print("3 - Cancelar consulta")
+                print("4 - Consultar consultas")
+                print("5 - Consultar consulta por ID")
+
                 resposta = int(input("Digite a opção desejada: "))
-                
                 if resposta == 1:
-                    consulta.consultarConsultaPorId()
+                    consulta.agendarConsulta()
                 elif resposta == 2:
+                    consulta.atualizarConsulta()
+                elif resposta == 3:
+                    consulta.deletarConsulta()
+                elif resposta == 4:
                     consulta.consultarConsultas()
-            
-            elif resposta == 5:
-                print("Cancelando agendamento de consulta...")
-                consulta.deletarConsulta()
-
-
+                elif resposta == 5:
+                    consulta.consultarConsultaPorId()                  
+    
+            elif resposta == 4:
+                print("1 - Relatório de consultas por clínica")
+                print("2 - Relatório de consultas com junção de tabelas")
+                resposta = int(input("Digite a opção desejada: "))
+                if resposta == 1:
+                    gerar_relatorio_total_consultas_por_clinica()
+                elif resposta == 2:
+                    gerar_relatorio_consultas_com_juncao()
            
         except ValueError:
             print("Por favor, insira apenas números.")
