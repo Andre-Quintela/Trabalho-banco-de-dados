@@ -32,11 +32,16 @@ Certifique-se de que você tenha os seguintes itens instalados:
 
 
 **1** - Crie uma nova pasta e abra o terminal nessa pasta.
+
 **2** - Execute o seguinte comando no terminal:
 ```bash
 git clone https://github.com/Andre-Quintela/Trabalho-banco-de-dados.git
 ```
-**3** - Após clonar o repositório, execute o comando a seguir para criar o ambiente virtual (venv):
+**3** - Navegando até a pasta do projeto
+```bash
+cd Trabalho-banco-de-dados/
+```
+**4** - Após clonar o repositório, execute o comando a seguir para criar o ambiente virtual (venv):
 ```bash
 #criação da venv
 python3 -m venv nome_da_venv
@@ -44,11 +49,11 @@ python3 -m venv nome_da_venv
 #execução da venv:
 source nome_da_venv/bin/activate
 ```
-**4** - Agora vamos instalar as dependencias com o comando:
+**5** - Agora vamos instalar as dependencias com o comando:
 ```bash
 pip install -r requirements.txt
 ```
-**5** - Executando o programa:
+**6** - Executando o programa:
 ```bash
 python3 main.py
 ```
