@@ -1,5 +1,5 @@
-from config import get_connection_string
-import config
+from Config import get_connection_string
+import Config
 import mysql.connector
 from mysql.connector import errorcode
 
@@ -8,10 +8,10 @@ def create_database():
     try:
         conn = mysql.connector.connect(**get_connection_string())
         cursor = conn.cursor()
-        cursor.execute(f"SHOW DATABASES LIKE '{config.DATABASE}'")
+        cursor.execute(f"SHOW DATABASES LIKE '{Config.DATABASE}'")
         exists = cursor.fetchone()
         if not exists:
-            cursor.execute(f"CREATE DATABASE {config.DATABASE}")
+            cursor.execute(f"CREATE DATABASE {Config.DATABASE}")
             print("Banco de dados criado com sucesso!")
         else:
             print("Banco de dados já existe.")
@@ -59,67 +59,12 @@ def create_tables():
         """)
 
         cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Recepcionista (
-                idRecepcionista SERIAL PRIMARY KEY,
-                nome VARCHAR(100) NOT NULL,
-                telefone VARCHAR(15),
-                clinicaId INT REFERENCES Clinica(idClinica)
-            );
-        """)
-
-        cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Administrador (
-                idAdministrador SERIAL PRIMARY KEY,
-                nome VARCHAR(100) NOT NULL,
-                clinicaId INT REFERENCES Clinica(idClinica)
-            );
-        """)
-
-        cursor.execute("""
                 CREATE TABLE IF NOT EXISTS Consulta (
                 idConsulta SERIAL PRIMARY KEY,
                 dataHora TIMESTAMP NOT NULL,
                 status VARCHAR(50),
                 medicoId INT REFERENCES Medico(idMedico),
                 pacienteId INT REFERENCES Paciente(idPaciente)
-            );
-        """)
-
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS Receita (
-                idReceita SERIAL PRIMARY KEY,
-                nomeMedicamento VARCHAR(100) NOT NULL,
-                dosagem VARCHAR(50),
-                duracaoDias INT,
-                consultaId INT REFERENCES Consulta(idConsulta)
-            );
-        """)
-
-        cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Prontuario (
-                idProntuario SERIAL PRIMARY KEY,
-                data TIMESTAMP NOT NULL,
-                diagnostico VARCHAR(255),
-                tratamento VARCHAR(255),
-                consultaId INT REFERENCES Consulta(idConsulta)
-            );
-        """)
-
-        cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Faturamento (
-                idFaturamento SERIAL PRIMARY KEY,
-                valor DECIMAL(10, 2),
-                dataFaturamento TIMESTAMP NOT NULL,
-                consultaId INT REFERENCES Consulta(idConsulta)
-            );
-        """)
-
-        cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Relatorio (
-                idRelatorio SERIAL PRIMARY KEY,
-                dataGeracao TIMESTAMP NOT NULL,
-                detalhes VARCHAR(255),
-                administradorId INT REFERENCES Administrador(idAdministrador)
             );
         """)
 

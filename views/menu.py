@@ -1,10 +1,13 @@
+import controllers
+
+
 def Menu():  
     while True:  
         try:
             resposta = int(input('''
                 ===============================================================
                 ===== Digite um número referente a opção que você deseja: ===== 
-                ===== 1 - Cadastrar novo paciente;                        =====
+                ===== 1 - Cadastrar novo usuário (Médico ou paciente);    =====
                 ===== 2 - Consultar os pacientes;                         =====
                 ===== 3 - Marcar nova consulta;                           =====
                 ===== 4 - Consultar as consultas marcadas ;               =====
@@ -18,7 +21,15 @@ def Menu():
                 print("Saindo do programa...")
                 break
             elif resposta == 1:
-                print("Consultando clientes...")
+                print("Cadastrando usuário...")
+                print("1 - Médico")
+                print("2 - Paciente")
+                tipo_usuario = int(input("Digite o tipo de usuário que deseja cadastrar: "))
+
+                if tipo_usuario == 1:
+                    controllers.Medico.cadastrarMedico()
+                elif tipo_usuario == 2:
+                    controllers.Paciente.cadastrarPaciente()
             elif resposta == 2:
                 print("Consultando pedidos...")
             elif resposta == 3:
