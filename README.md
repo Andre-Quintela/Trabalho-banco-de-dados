@@ -58,7 +58,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     <td align="center">
       <a href="https://github.com/Tonyzin" title="Perfil do Tonyzin">
         <img src="https://avatars.githubusercontent.com/u/181393325?v=4" width="100px;" alt="Foto do Tonyzin no GitHub"/><br>
-        <sub><b>Tonyzin</b></sub>
+        <sub><b>Entony Jovino</b></sub>
       </a>
     </td>
     <td align="center">
