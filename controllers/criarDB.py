@@ -6,7 +6,7 @@ from mysql.connector import errorcode
 
 def create_database():
     try:
-        conn = mysql.connector.connect(**get_connection_string())
+        conn = get_connection_string()
         cursor = conn.cursor()
         cursor.execute(f"SHOW DATABASES LIKE '{config.DATABASE}'")
         exists = cursor.fetchone()
@@ -24,7 +24,7 @@ def create_database():
 
 def create_tables():
     try:
-        conn = mysql.connector.connect(**get_connection_string())
+        conn = get_connection_string()
         conn.autocommit = True 
         cursor = conn.cursor()
         

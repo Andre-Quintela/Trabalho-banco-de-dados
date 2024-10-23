@@ -1,4 +1,4 @@
-from controllers import Clinica, Consulta, Medico, Paciente
+from controllers import clinica, consulta, medico, paciente
 
 
 
@@ -31,15 +31,15 @@ def Menu():
 
                 resposta = int(input("Digite a opção desejada: "))
                 if resposta == 1:
-                    Clinica.cadastrarClinica()
+                    clinica.cadastrarClinica()
                 elif resposta == 2:
-                    Clinica.consultarClinicas()
+                    clinica.consultarClinicas()
                 elif resposta == 3:
-                    Clinica.consultarClinicaPorId()
+                    clinica.consultarClinicaPorId()
                 elif resposta == 4:
-                    Clinica.atualizarClinica()
+                    clinica.atualizarClinica()
                 elif resposta == 5:
-                    Clinica.deletarClinica()
+                    clinica.deletarClinica()
                 
             elif resposta == 2:
                 print("Cadastrando usuário...")
@@ -47,9 +47,9 @@ def Menu():
                 print("2 - Paciente")
                 tipo_usuario = int(input("Digite o tipo de usuário que deseja cadastrar: "))
                 if tipo_usuario == 1:
-                    Medico.cadastrarMedico()
+                    medico.cadastrarMedico()
                 elif tipo_usuario == 2:
-                    Paciente.cadastrarPaciente()
+                    paciente.cadastrarPaciente()
 
             elif resposta == 3:
                 print("Consultando usuário...")
@@ -65,13 +65,13 @@ def Menu():
                     resposta = int(input("Digite a opção desejada: "))
 
                     if resposta == 1:
-                        Medico.consultarMedicoPorId()
+                        medico.consultarMedicoPorId()
                     elif resposta == 2:
-                        Medico.consultarMedicos()
+                        medico.consultarMedicos()
                     elif resposta == 3:
-                        Medico.atualizarMedico()
+                        medico.atualizarMedico()
                     elif resposta == 4:
-                        Medico.deletarMedico()
+                        medico.deletarMedico()
 
                 elif tipo_usuario == 2:
                     print("1 - Consultar paciente por ID")
@@ -81,17 +81,17 @@ def Menu():
                     resposta = int(input("Digite a opção desejada: "))
 
                     if resposta == 1:
-                        Paciente.consultarPacientePorId()
+                        paciente.consultarPacientePorId()
                     elif resposta == 2:
-                        Paciente.consultarPacientes()
+                        paciente.consultarPacientes()
                     elif resposta == 3:
-                        Paciente.atualizarPaciente()
+                        paciente.atualizarPaciente()
                     elif resposta == 4:
-                        Paciente.deletarPaciente()
+                        paciente.deletarPaciente()
 
                 elif resposta == 3:
                    print("Marcando nova consulta...")
-                   Consulta.cadastrarConsulta()
+                   consulta.cadastrarConsulta()
                 
                 elif resposta == 4:
                     print("Consultando consultas marcadas...")
@@ -100,13 +100,13 @@ def Menu():
                     resposta = int(input("Digite a opção desejada: "))
                     
                     if resposta == 1:
-                        Consulta.consultarConsultaPorId()
+                        consulta.consultarConsultaPorId()
                     elif resposta == 2:
-                        Consulta.consultarConsultas()
+                        consulta.consultarConsultas()
                 
                 elif resposta == 5:
                     print("Cancelando agendamento de consulta...")
-                    Consulta.deletarConsulta()
+                    consulta.deletarConsulta()
 
 
            

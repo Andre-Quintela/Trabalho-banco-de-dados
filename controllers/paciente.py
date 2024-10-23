@@ -1,5 +1,5 @@
 from config import get_connection_string
-from models import Paciente
+from models.paciente_model import Paciente
 
 
 def cadastrarPaciente():

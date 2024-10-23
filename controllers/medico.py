@@ -1,5 +1,5 @@
 from config import get_connection_string
-from models import Medico
+from models.medico_model import Medico
 
 def cadastrarMedico():
     nome = input("Digite o nome do médico: ")

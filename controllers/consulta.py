@@ -1,5 +1,5 @@
 from config import get_connection_string
-from models import Consulta
+from models.consulta_model import Consulta
 
 def cadastrarConsulta():
     data = input("Digite a data da consulta (formato YYYY-MM-DD): ")

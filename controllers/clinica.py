@@ -1,5 +1,6 @@
 from config import get_connection_string
-from models import Clinica
+from models.clinica_model import Clinica
+
 
 def cadastrarClinica():
     nome = input("Digite o nome da clínica: ")
