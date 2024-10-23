@@ -43,6 +43,12 @@ pip install mysql-connector-python
 
 #Para conferir se instalou, execute o:
 pip list
+
+#EXECUTAR O PROGRAMA
+#com a venv ativada e o terminal aberto no diretorio raiz do programa digite:
+python3 main.py
+
+#Caso prefira, poderá executar pelo vs code também, basta rodar o programa pelo arquivo main.py
 ```
 🤝 Colaboradores
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
