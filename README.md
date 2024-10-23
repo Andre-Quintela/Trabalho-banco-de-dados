@@ -30,36 +30,32 @@ Certifique-se de que você tenha os seguintes itens instalados:
 
 
 
+
+**1** - Crie uma nova pasta e abra o terminal nessa pasta.
+**2** - Execute o seguinte comando no terminal:
 ```bash
-#Crie uma nova pasta e abra o terminal nessa pasta.
-#Execute o seguinte comando no terminal:
 git clone https://github.com/Andre-Quintela/Trabalho-banco-de-dados.git
-
-#verificar o python está instaldo:
-python3 --version
-
+```
+**3** - Após clonar o repositório, execute o comando a seguir para criar o ambiente virtual (venv):
+```bash
 #criação da venv
 python3 -m venv nome_da_venv
 
 #execução da venv:
 source nome_da_venv/bin/activate
-
-#instalar a biblioteca
-pip install mysql-connector-python
-
-#Para conferir se instalou, execute o:
-pip list
-
-#EXECUTAR O PROGRAMA
-#com a venv ativada e o terminal aberto no diretorio raiz do programa digite:
+```
+**4** - Agora vamos instalar as dependencias com o comando:
+```bash
+pip install -r requirements.txt
+```
+**5** Executando o programa:
+```bash
 python3 main.py
-
-#Caso prefira, poderá executar pelo vs code também, basta rodar o programa pelo arquivo main.py
 ```
 🤝 Colaboradores
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/Andre-Quintela" title="Perfil de André Quintela">
