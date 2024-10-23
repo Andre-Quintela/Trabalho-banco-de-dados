@@ -1,3 +1,4 @@
+from time import sleep
 from controllers import clinica, consulta, medico, paciente
 
 
@@ -26,3 +27,5 @@ def splashscreen():
                  Professor: Howard Roatti                        
         ================================================================
         ''')
+
+    sleep(2)
