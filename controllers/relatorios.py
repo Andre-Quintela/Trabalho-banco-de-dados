@@ -1,4 +1,5 @@
 from config import get_connection_string
+import mysql.connector
 
 
 def gerar_relatorio_total_consultas_por_clinica():
@@ -61,10 +62,12 @@ def gerar_relatorio_consultas_com_juncao():
         resultados = cursor.fetchall()
 
         # Exibindo o relatório
-        print(f"{'Consulta ID':<12}{'Data e Hora':<20}{'Médico':<20}{'Paciente':<20}{'Clínica':<30}")
+        print(f"{'Consulta ID':<20}{'Data e Hora':<25}{'Médico':<20}{'Paciente':<20}{'Clínica':<30}")
         print("-" * 90)
         for row in resultados:
-            print(f"{row[0]:<12}{row[1]:<20}{row[2]:<20}{row[3]:<20}{row[4]:<30}")
+            # Formatando a dataHora
+            data_hora = row[1].strftime("%Y-%m-%d %H:%M") if row[1] else "N/A"
+            print(f"{row[0]:<20}{data_hora:<25}{row[2]:<20}{row[3]:<20}{row[4]:<30}")
 
     except mysql.connector.Error as err:
         print(f"Erro ao gerar relatório: {err}")

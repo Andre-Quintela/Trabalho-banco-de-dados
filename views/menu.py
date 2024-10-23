@@ -93,7 +93,7 @@ def Menu():
 
                 resposta = int(input("Digite a opção desejada: "))
                 if resposta == 1:
-                    consulta.agendarConsulta()
+                    consulta.cadastrarConsulta()
                 elif resposta == 2:
                     consulta.atualizarConsulta()
                 elif resposta == 3:
