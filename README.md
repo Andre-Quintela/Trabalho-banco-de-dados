@@ -48,7 +48,7 @@ source nome_da_venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-**5** Executando o programa:
+**5** - Executando o programa:
 ```bash
 python3 main.py
 ```
