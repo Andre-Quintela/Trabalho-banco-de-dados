@@ -119,3 +119,15 @@ def deletarPaciente():
 
     cursor.close()
     conn.close()
+
+def numCadastrosPaciente():
+    conn = get_connection_string()  # Função que retorna a conexão
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM Paciente;")
+    num_pacientes = cursor.fetchone()[0]
+    print(f"Total de pacientes cadastrados: {num_pacientes}")
+
+    cursor.close()
+    conn.close()
+    return int(num_pacientes)

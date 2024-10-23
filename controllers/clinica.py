@@ -97,3 +97,16 @@ def deletarClinica():
 
     cursor.close()
     conn.close()
+
+def numCadastrosClinica():
+    conn = get_connection_string()  # Função que retorna a conexão
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM Clinica;")
+    num_clinicas = cursor.fetchone()[0]
+
+    print(f"Número de clínicas cadastradas: {num_clinicas}")
+
+    cursor.close()
+    conn.close()
+    return int(num_clinicas)

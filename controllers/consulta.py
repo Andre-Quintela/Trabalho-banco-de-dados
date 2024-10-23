@@ -159,3 +159,15 @@ def deletarConsulta():
 
     cursor.close()
     conn.close()
+
+def numCadastrosConsulta():
+    conn = get_connection_string()  # Função que retorna a conexão
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM Consulta;")
+    num_consultas = cursor.fetchone()[0]
+    print(f"Total de consultas cadastradas: {num_consultas}")
+
+    cursor.close()
+    conn.close()
+    return int(num_consultas)

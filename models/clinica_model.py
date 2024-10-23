@@ -39,7 +39,7 @@ class Clinica:
         cursor.execute(query, (self.id_clinica,))
         conn.commit()
         cursor.close()
-
+    
     # Método para carregar uma clínica do banco
     @classmethod
     def carregar(cls, conn, id_clinica):
