@@ -24,31 +24,60 @@ Certifique-se de que você tenha os seguintes itens instalados:
 
 - **Python 3.x**
 - **MySQL** instalado e configurado.
-- Biblioteca `mysql-connector-python`. Caso não esteja instalada, você pode fazer isso com o comando:
+- Biblioteca `mysql-connector-python`.
+
+- Passo a passo de criação de ambiente virtual (venv) e instalação da biblioteca mysql-connector
 
 ```bash
+#verificar o python está instaldo:
+python3 --version
+
+#criação da venv
+python3 -m venv nome_da_venv
+
+#execução da venv:
+source nome_da_venv/bin/activate
+
+#instalar a biblioteca
 pip install mysql-connector-python
 
 #Para conferir se instalou, execute o:
-
 pip list
 ```
 🤝 Colaboradores
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 <table> 
+ <td align="center"> 
+    <a href="https://github.com/Andre-Quintela" title="Perfil de André Quintela"> 
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQFcLJGIkvQkwA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722270168067?e=1735171200&v=beta&t=XaLYC0USBXWDLsxO5mqIkQo6NKJA1BMWNigUv1UaNBs" width="100px;" alt="Foto de André no LinkdIn"/><br> 
+      <sub><b>André Quintela.</b></sub> </a> 
+  </td> 
+
   <tr>
-      <td align="center">
-        <a href="https://github.com/Tonyzin" title="Perfil do Tonyzin"> 
-          <img src="https://avatars.githubusercontent.com/u/181393325?v=4" width="100px;" alt="Foto do Tonyzin no GitHub"/><br> 
-    <sub><b>Tonyzin</b></sub> </a> </td>
-    
+    <td align="center">
+      <a href="https://github.com/Tonyzin" title="Perfil do Tonyzin"> 
+      <img src="https://avatars.githubusercontent.com/u/181393325?v=4" width="100px;" alt="Foto do Tonyzin no GitHub"/><br> 
+      <sub><b>Tonyzin</b></sub> </a> 
+    </td>
     
  <td align="center"> 
-  <a href="https://github.com/raphaelsimoesg" title="Perfil de Raphael Simões"> 
-    <img src="https://avatars.githubusercontent.com/u/95584209?s=400&u=5955222de40126211aa2b50c07341f5e5290a970&v=4" width="100px;" alt="Foto do Raphael Simões no GitHub"/><br> 
-    <sub><b>R. Simões G.</b></sub> </a> </td> 
+    <a href="https://github.com/raphaelsimoesg" title="Perfil de Raphael Simões"> 
+      <img src="https://avatars.githubusercontent.com/u/95584209?s=400&u=5955222de40126211aa2b50c07341f5e5290a970&v=4" width="100px;" alt="Foto do Raphael Simões no GitHub"/><br> 
+      <sub><b>R. Simões G.</b></sub> </a> 
+  </td>
 
+  <td align="center"> 
+    <a href="https://github.com/cassio-j7" title="Perfil de Cassio"> 
+      <img src="https://avatars.githubusercontent.com/u/112703498?v=4" width="100px;" alt="Foto do Cassio GitHub"/><br> 
+      <sub><b>Cassio Jordan</b></sub> </a> 
+  </td>   
+
+  <td align="center"> 
+    <a href="https://github.com/cassio-j7" title="Perfil de Guilherme ambrozio"> 
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGDBzyFwV1bPQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1689871772918?e=1735171200&v=beta&t=lYfb0qckGIri2NvhfPZCD2BwYVw-reyEy78fVrUbMTc" width="100px;" alt="Foto do Guilherme no linkdIn"/><br> 
+      <sub><b>Guilherme Ambrozio</b></sub> </a> 
+  </td>   
 
   </tr>
 </table>
