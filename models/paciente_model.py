@@ -15,10 +15,10 @@ class Paciente:
         cursor = conn.cursor()
         query = """
             INSERT INTO Paciente (nome, endereco, telefone, dataNascimento, clinicaId)
-            VALUES (%s, %s, %s, %s, %s) RETURNING idPaciente;
+            VALUES (%s, %s, %s, %s, %s);
         """
         cursor.execute(query, (self.nome, self.endereco, self.telefone, self.data_nascimento, self.clinica_id))
-        self.id_paciente = cursor.fetchone()[0]
+        self.id_paciente = cursor.lastrowid  # Obtém o ID da última linha inserida
         conn.commit()
         cursor.close()
 

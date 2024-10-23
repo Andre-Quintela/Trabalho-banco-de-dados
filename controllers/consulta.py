@@ -3,7 +3,6 @@ from models.consulta_model import Consulta
 
 def cadastrarConsulta():
     data = input("Digite a data da consulta (formato YYYY-MM-DD): ")
-    hora = input("Digite a hora da consulta (formato HH:MM): ")
     medico_id = int(input("Digite o ID do médico da consulta: "))
     paciente_id = int(input("Digite o ID do paciente da consulta: "))
     clinica_id = int(input("Digite o ID da clínica da consulta: "))
@@ -42,7 +41,7 @@ def cadastrarConsulta():
         return
 
     # Se o médico, paciente e clínica forem válidos, prossegue com o cadastro da consulta
-    consulta = Consulta(data=data, hora=hora, medico_id=medico_id, paciente_id=paciente_id, clinica_id=clinica_id)
+    consulta = Consulta(data_hora=data, medico_id=medico_id, paciente_id=paciente_id, clinica_id=clinica_id)
     consulta.inserir(conn)
     print(f"Consulta cadastrada com sucesso! ID: {consulta.id_consulta}")
 
@@ -53,13 +52,13 @@ def consultarConsultas():
     conn = get_connection_string()  # Função que retorna a conexão
     cursor = conn.cursor()
 
-    cursor.execute("SELECT idConsulta, data, hora, medicoId, pacienteId, clinicaId FROM Consulta;")
+    cursor.execute("SELECT idConsulta, dataHora, medicoId, pacienteId, clinicaId FROM Consulta;")
     consultas = cursor.fetchall()
 
     if consultas:
         print("Consultas cadastradas:")
         for consulta in consultas:
-            print(f"ID: {consulta[0]}\nData: {consulta[1]}\nHora: {consulta[2]}\nID Médico: {consulta[3]}\nID Paciente: {consulta[4]}\nID Clínica: {consulta[5]}\n")
+            print(f"ID: {consulta[0]}\nData: {consulta[1]}\nID Médico: {consulta[2]}\nID Paciente: {consulta[3]}\nID Clínica: {consulta[4]}\n")
     else:
         print("Nenhuma consulta cadastrada.")
 
@@ -93,7 +92,6 @@ def atualizarConsulta():
     if consulta:
         print(f"Consulta selecionada: {consulta}")
         data = input("Digite a data da consulta (formato YYYY-MM-DD): ")
-        hora = input("Digite a hora da consulta (formato HH:MM): ")
         medico_id = int(input("Digite o ID do médico da consulta: "))
         paciente_id = int(input("Digite o ID do paciente da consulta: "))
         clinica_id = int(input("Digite o ID da clínica da consulta: "))
@@ -129,11 +127,9 @@ def atualizarConsulta():
             return
 
         # Se o médico, paciente e clínica forem válidos, prossegue com a atualização da consulta
-        consulta.data = data
-        consulta.hora = hora
+        consulta.data_hora = data
         consulta.medico_id = medico_id
         consulta.paciente_id = paciente_id
-        consulta.clinica_id = clinica_id
         consulta.atualizar(conn)
         print("Consulta atualizada com sucesso!")
 

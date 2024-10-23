@@ -9,20 +9,20 @@ consultasCadastradas = consulta.numCadastrosConsulta()
 def splashscreen():
     print(f'''
         ================================================================
-        =====         Sistema de gerenciamento de clínicas         ===== 
-        ===== TOTAL DE REGISTROS CADASTRADOS:                      =====                 
-        ===== 1 - Clínicas: {clinicasCadastradas}                  =====
-        ===== 2 - Consultas: {consultasCadastradas}                =====
-        ===== 3 - Médicos: {medicosCadastrados}                    =====
-        ===== 4 - Pacientes: {pacientesCadastrados}                =====
-        =====                                                      =====
-        =====    Criado por: André Quintela                        ===== 
-        =====                Cassio Jordan                         ===== 
-        =====                Entony Jovino                         ===== 
-        =====                Guilherme Ambrozio                    ===== 
-        =====                Raphael Simoes                        ===== 
-        =====                                                      ===== 
-        =====     Disciplica: Banco de Dados 2024-2                ===== 
-        =====      Professor: Howard Roatti                        ===== 
+                        Sistema de gerenciamento de clínicas        
+            TOTAL DE REGISTROS CADASTRADOS:                                     
+            1 - Clínicas: {clinicasCadastradas}                  
+            2 - Médicos: {medicosCadastrados}                    
+            3 - Pacientes: {pacientesCadastrados}                
+            4 - Consultas: {consultasCadastradas}                
+                                                       
+                Criado por: André Quintela                        
+                            Cassio Jordan                         
+                            Entony Jovino                         
+                            Guilherme Ambrozio                   
+                            Raphael Simoes                        
+                                                          
+                Disciplica: Banco de Dados 2024-2                
+                 Professor: Howard Roatti                        
         ================================================================
         ''')
