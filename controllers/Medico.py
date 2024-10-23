@@ -1,4 +1,4 @@
-from Config import get_connection_string
+from config import get_connection_string
 from models import Medico
 
 def cadastrarMedico():

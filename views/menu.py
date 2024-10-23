@@ -1,4 +1,5 @@
-import controllers
+from controllers import Medico, Paciente
+
 
 
 def Menu():  
@@ -27,9 +28,9 @@ def Menu():
                 tipo_usuario = int(input("Digite o tipo de usuário que deseja cadastrar: "))
 
                 if tipo_usuario == 1:
-                    controllers.Medico.cadastrarMedico()
+                    Medico.cadastrarMedico()
                 elif tipo_usuario == 2:
-                    controllers.Paciente.cadastrarPaciente()
+                    Paciente.cadastrarPaciente()
             elif resposta == 2:
                 print("Consultando pedidos...")
             elif resposta == 3:

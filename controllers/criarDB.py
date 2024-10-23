@@ -1,5 +1,5 @@
-from Config import get_connection_string
-import Config
+from config import get_connection_string
+import config
 import mysql.connector
 from mysql.connector import errorcode
 
@@ -8,10 +8,10 @@ def create_database():
     try:
         conn = mysql.connector.connect(**get_connection_string())
         cursor = conn.cursor()
-        cursor.execute(f"SHOW DATABASES LIKE '{Config.DATABASE}'")
+        cursor.execute(f"SHOW DATABASES LIKE '{config.DATABASE}'")
         exists = cursor.fetchone()
         if not exists:
-            cursor.execute(f"CREATE DATABASE {Config.DATABASE}")
+            cursor.execute(f"CREATE DATABASE {config.DATABASE}")
             print("Banco de dados criado com sucesso!")
         else:
             print("Banco de dados já existe.")
