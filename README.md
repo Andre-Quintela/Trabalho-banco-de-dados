@@ -28,7 +28,12 @@ Certifique-se de que você tenha os seguintes itens instalados:
 
 - Passo a passo de criação de ambiente virtual (venv) e instalação da biblioteca mysql-connector
 
+
+
 ```bash
+**Crie uma nova pasta** e abra o terminal nessa pasta.
+git clone https://github.com/Andre-Quintela/Trabalho-banco-de-dados.git
+
 #verificar o python está instaldo:
 python3 --version
 
