@@ -31,7 +31,8 @@ Certifique-se de que você tenha os seguintes itens instalados:
 
 
 ```bash
-**Crie uma nova pasta** e abra o terminal nessa pasta.
+#Crie uma nova pasta e abra o terminal nessa pasta.
+#Execute o seguinte comando no terminal:
 git clone https://github.com/Andre-Quintela/Trabalho-banco-de-dados.git
 
 #verificar o python está instaldo:
