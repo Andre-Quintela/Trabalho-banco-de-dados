@@ -10,6 +10,9 @@ Este projeto visa a implementação de funções em Python para acessar e consul
 - **Manipulação de Dados**: Interaja com os dados do banco, realizando operações de consulta e tratamento das informações.
 - **Tratamento de Erros**: O sistema é capaz de identificar e exibir mensagens claras em caso de falha ao acessar o banco de dados.
 
+## 📺 Video do projeto:
+[Assista o vídeo no YouTube](https://www.youtube.com/watch?v=_xYN0S24TD0)
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Python**: Linguagem principal utilizada para o desenvolvimento.
