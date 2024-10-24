@@ -2,6 +2,10 @@ from controllers import clinica, consulta, medico, paciente
 from controllers.relatorios import gerar_relatorio_consultas_com_juncao, gerar_relatorio_total_consultas_por_clinica
 from views.splashscreen import splashscreen
 
+def printar():
+    for _ in range(30):
+        print()
+
 def exibir_menu(opcoes):
     print("\n".join(opcoes))
     return input("Escolha uma opção: ")
@@ -17,14 +21,19 @@ def menu_clinica():
             "0 - Voltar"
         ])
         if resposta == "1":
+            printar()
             clinica.cadastrarClinica()
         elif resposta == "2":
+            printar()
             clinica.consultarClinicas()
         elif resposta == "3":
+            printar()
             clinica.consultarClinicaPorId()
         elif resposta == "4":
+            printar()
             clinica.atualizarClinica()
         elif resposta == "5":
+            printar()
             clinica.deletarClinica()
         elif resposta == "0":
             break
@@ -39,8 +48,10 @@ def menu_usuarios():
             "0 - Voltar"
         ])
         if tipo_usuario == "1":
+            printar()
             menu_medico()
         elif tipo_usuario == "2":
+            printar()
             menu_paciente()
         elif tipo_usuario == "0":
             break
@@ -58,14 +69,19 @@ def menu_medico():
             "0 - Voltar"
         ])
         if resposta == "1":
+            printar()
             medico.cadastrarMedico()
         elif resposta == "2":
+            printar()
             medico.consultarMedicoPorId()
         elif resposta == "3":
+            printar()
             medico.consultarMedicos()
         elif resposta == "4":
+            printar()
             medico.atualizarMedico()
         elif resposta == "5":
+            printar()
             medico.deletarMedico()
         elif resposta == "0":
             break
@@ -83,14 +99,19 @@ def menu_paciente():
             "0 - Voltar"
         ])
         if resposta == "1":
+            printar()
             paciente.cadastrarPaciente()
         elif resposta == "2":
+            printar()
             paciente.consultarPacientePorId()
         elif resposta == "3":
+            printar()
             paciente.consultarPacientes()
         elif resposta == "4":
+            printar()
             paciente.atualizarPaciente()
         elif resposta == "5":
+            printar()
             paciente.deletarPaciente()
         elif resposta == "0":
             break
@@ -108,14 +129,19 @@ def menu_consulta():
             "0 - Voltar"
         ])
         if resposta == "1":
+            printar()
             consulta.agendarConsulta()
         elif resposta == "2":
+            printar()
             consulta.atualizarConsulta()
         elif resposta == "3":
+            printar()
             consulta.deletarConsulta()
         elif resposta == "4":
+            printar()
             consulta.consultarConsultas()
         elif resposta == "5":
+            printar()
             consulta.consultarConsultaPorId()
         elif resposta == "0":
             break
@@ -130,8 +156,10 @@ def menu_relatorios():
             "0 - Voltar"
         ])
         if resposta == "1":
+            printar()
             gerar_relatorio_total_consultas_por_clinica()
         elif resposta == "2":
+            printar()
             gerar_relatorio_consultas_com_juncao()
         elif resposta == "0":
             break
@@ -152,16 +180,21 @@ def Menu():
                 "==============================================================="
             ])
             if resposta == "0":
+                printar()
                 splashscreen()
                 print("Saindo do programa...")
                 break
             elif resposta == "1":
+                printar()
                 menu_clinica()
             elif resposta == "2":
+                printar()
                 menu_usuarios()
             elif resposta == "3":
+                printar()
                 menu_consulta()
             elif resposta == "4":
+                printar()
                 menu_relatorios()
             else:
                 print("Insira um valor válido.")

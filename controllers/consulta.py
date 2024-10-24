@@ -1,7 +1,7 @@
 from config import get_connection_string
 from models.consulta_model import Consulta
 
-def cadastrarConsulta():
+def agendarConsulta():
     data = input("Digite a data da consulta (formato YYYY-MM-DD): ")
     medico_id = int(input("Digite o ID do médico da consulta: "))
     paciente_id = int(input("Digite o ID do paciente da consulta: "))
