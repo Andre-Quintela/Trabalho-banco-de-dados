@@ -11,7 +11,8 @@ Este projeto visa a implementação de funções em Python para acessar e consul
 - **Tratamento de Erros**: O sistema é capaz de identificar e exibir mensagens claras em caso de falha ao acessar o banco de dados.
 
 ## 📺 Video do projeto:
-[Assista o vídeo no YouTube](https://www.youtube.com/watch?v=_xYN0S24TD0)
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=_xYN0S24TD0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 ## 🚀 Tecnologias Utilizadas
 
