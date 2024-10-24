@@ -3,7 +3,7 @@ from controllers.relatorios import gerar_relatorio_consultas_com_juncao, gerar_r
 from views.splashscreen import splashscreen
 
 def printar():
-    for _ in range(30):
+    for _ in range(100):
         print()
 
 def exibir_menu(opcoes):
