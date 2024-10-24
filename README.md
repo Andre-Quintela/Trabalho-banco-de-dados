@@ -11,7 +11,7 @@ Este projeto visa a implementação de funções em Python para acessar e consul
 - **Tratamento de Erros**: O sistema é capaz de identificar e exibir mensagens claras em caso de falha ao acessar o banco de dados.
 
 ## 📺 Video do projeto:
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/_xYN0S24TD0" title="Trabalho Banco de dados - Sistema de gerenciamento de clínicas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Assista o video](https://www.youtube.com/watch?v=_xYN0S24TD0.jpg)](https://www.youtube.com/watch?v=_xYN0S24TD0)
 
 ## 🚀 Tecnologias Utilizadas
 
