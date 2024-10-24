@@ -180,8 +180,6 @@ def Menu():
                 "==============================================================="
             ])
             if resposta == "0":
-                printar()
-                splashscreen()
                 print("Saindo do programa...")
                 break
             elif resposta == "1":
